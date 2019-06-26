@@ -9,5 +9,5 @@ for x in range(1, n):
         y += "bar"
     if len(y) == 0:
         y += str(x)
-    
+
     print(y)

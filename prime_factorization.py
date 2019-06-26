@@ -1,4 +1,4 @@
-import json
+import json  # saves calculated prime numbers to conserve time in multiple runs
 
 try:
     prime_numbers = json.load(open('prime_numbers.json'))
@@ -20,7 +20,7 @@ def grow_prime_number():
 def prime_factorization(number):
     while 0.5 * number > prime_numbers[len(prime_numbers) - 1]:
         grow_prime_number()
-    factors =[]
+    factors = []
     while number not in prime_numbers:
         for x in prime_numbers:
             if number % x == 0:
@@ -30,15 +30,15 @@ def prime_factorization(number):
     factors.append(int(number))
     return factors
 
+
 number = 0
 for x in range(3):
     number = int(input('\nIn: '))
     if number > 1:
         break
 
-print('Primfaktorzerlegung:', prime_factorization(number), end='\n')
+print('prime factorization:', prime_factorization(number), end='\n')
 
-# update json
 try:
     old = json.load(open('prime_numbers.json'))
     if len(old) < len(prime_numbers):

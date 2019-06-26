@@ -1,8 +1,6 @@
 n = int(input('n: '))
 
-living = []
-for i in range(n):
-    living.append(i + 1)
+living = [i for i in range(n)]
 
 killed = []
 pos = 0
